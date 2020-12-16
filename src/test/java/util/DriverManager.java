@@ -18,7 +18,8 @@ public class DriverManager {
     private static WebDriverWait wait;
     private static final long defaultTimeout = 10;
 
-    private static final String APK_PATH = "C:\\Users\\Rodrigo Souza\\Documents\\GitHub\\tseResultados\\src\\test\\resources\\apk\\ResultadosTSE.apk";
+//    private static final String APK_PATH = "C:\\Users\\Rodrigo Souza\\Documents\\GitHub\\tseResultados\\src\\test\\resources\\apk\\ResultadosTSE.apk";
+    private static final String APK_PATH = "/Users/marlonalmeida/testing/mobile-testing/mobile-tse-resultado/src/test/resources/apk/ResultadosTSE.apk";
     private static final String APPIUM_URL_SERVER = "http://localhost:4723/wd/hub";
 
     public static AppiumDriver<MobileElement> createDriver() {
@@ -26,10 +27,10 @@ public class DriverManager {
         if (driver == null) {
             DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-            desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
-            desiredCapabilities.setCapability(MobileCapabilityType.VERSION, "9.0");
+            desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "VirtualDevice");
+//            desiredCapabilities.setCapability(MobileCapabilityType.VERSION, "9.0");
             desiredCapabilities.setCapability(MobileCapabilityType.APP, APK_PATH);
-            desiredCapabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, "true");
+//            desiredCapabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, "true");
             try {
                 driver = new AndroidDriver<>(new URL(APPIUM_URL_SERVER), desiredCapabilities);
             } catch (MalformedURLException e) {

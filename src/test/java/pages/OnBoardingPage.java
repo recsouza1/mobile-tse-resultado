@@ -22,7 +22,7 @@ public class OnBoardingPage {
         wait = DriverManager.getWait();
     }
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Proximo\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Próximo\")")
     public MobileElement nextButton;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Entendi\")")
@@ -31,14 +31,19 @@ public class OnBoardingPage {
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.Button\")")
     public MobileElement readAndAcceptButton;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Agora não\")")
+    public MobileElement notNowLocalization;
+
     public void completeSetup() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Button")));
         nextButton.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Button")));
         understandButton.click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Button")));
         scrollToEnd();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Button")));
         readAndAcceptButton.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Button")));
+        notNowLocalization.click();
     }
 
     public void scrollToEnd(){
