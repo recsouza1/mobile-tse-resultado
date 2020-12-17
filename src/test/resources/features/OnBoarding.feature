@@ -1,6 +1,6 @@
 Feature: Onboarding
 
-  Scenario: Complete initial setup
+  Scenario: Complete initial onboarding
     Given I launch the App for the first time
-    When I complete the setup
-    Then I reach the home page
+    When I complete the onboarding
+    Then I reach the main screen

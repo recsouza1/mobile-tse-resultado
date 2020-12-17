@@ -18,12 +18,12 @@ public class OnBoardingSteps {
         homePage = new HomePage(DriverManager.getDriver());
     }
 
-    @When("I complete the setup")
+    @When("I complete the onboarding")
     public void completeSetup() {
         onBoardingPage.completeOnBoarding();
     }
 
-    @Then("I reach the home page")
+    @Then("I reach the main screen")
     public void homePageReached() {
         assert homePage.selectPlaceStr.isDisplayed();
     }
