@@ -20,7 +20,7 @@ public class OnBoardingSteps {
 
     @When("I complete the setup")
     public void completeSetup() {
-        onBoardingPage.completeSetup();
+        onBoardingPage.completeOnBoarding();
     }
 
     @Then("I reach the home page")

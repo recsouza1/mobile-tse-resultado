@@ -43,7 +43,7 @@ public class OnBoardingPage {
         locator.click();
     }
 
-    public void completeSetup() {
+    public void completeOnBoarding() {
         clickOn(proximoBtn);
         clickOn(entendiBtn);
         scrollToEnd();
