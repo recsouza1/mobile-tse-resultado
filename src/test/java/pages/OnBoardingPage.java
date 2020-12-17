@@ -23,30 +23,31 @@ public class OnBoardingPage {
     }
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Próximo\")")
-    public MobileElement nextButton;
+    public MobileElement proximoBtn;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Entendi\")")
-    public MobileElement understandButton;
+    public MobileElement entendiBtn;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.Button\")")
-    public MobileElement readAndAcceptButton;
+    public MobileElement liAceitoBtn;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Agora não\")")
-    public MobileElement notNowLocalization;
-
-    public void completeSetup() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Button")));
-        nextButton.click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Button")));
-        understandButton.click();
-        scrollToEnd();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Button")));
-        readAndAcceptButton.click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Button")));
-        notNowLocalization.click();
-    }
+    public MobileElement agoraNaoBtn;
 
     public void scrollToEnd(){
         driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).flingToEnd(10)"));
+    }
+
+    public void clickOn(MobileElement locator) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Button")));
+        locator.click();
+    }
+
+    public void completeSetup() {
+        clickOn(proximoBtn);
+        clickOn(entendiBtn);
+        scrollToEnd();
+        clickOn(liAceitoBtn);
+        clickOn(agoraNaoBtn);
     }
 }
