@@ -38,4 +38,9 @@ public class HomePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.view.View")));
         locator.click();
     }
+
+    public boolean isSelectedTabBtn(MobileElement locator) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.view.View")));
+        return locator.isSelected();
+    }
 }
