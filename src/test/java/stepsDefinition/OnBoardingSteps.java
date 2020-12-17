@@ -25,6 +25,6 @@ public class OnBoardingSteps {
 
     @Then("I reach the main screen")
     public void homePageReached() {
-        assert homePage.selectPlaceStr.isDisplayed();
+        assert homePage.selecioneLocalStr.isDisplayed();
     }
 }

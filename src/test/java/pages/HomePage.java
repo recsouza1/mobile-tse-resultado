@@ -13,5 +13,5 @@ public class HomePage {
     }
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Selecione uma localidade acima\")")
-    public MobileElement selectPlaceStr;
+    public MobileElement selecioneLocalStr;
 }
