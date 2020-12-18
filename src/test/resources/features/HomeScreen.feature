@@ -10,3 +10,8 @@ Feature: Tab Icons
       | 'totalizacaoTabBtn' |
       | 'favoritosTabBtn'   |
       | 'informacoesTabBtn' |
+
+  Scenario: Select Resultados Tab Icons
+    Given I am at home screen
+    When I select resultados
+    Then The restultados should be selected

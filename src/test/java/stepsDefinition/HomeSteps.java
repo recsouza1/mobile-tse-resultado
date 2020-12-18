@@ -18,29 +18,38 @@ public class HomeSteps {
         onBoardingPage.completeOnBoarding();
     }
 
-    @When("I select {string}")
-    public void i_select_tab_icon_btn(String locator) {
-        if (locator.equals("resultadosTabBtn")) {
-            homePage.selectTabBtn(homePage.resultadosTabBtn);
-        } else if (locator.equals("totalizacaoTabBtn")) {
-            homePage.selectTabBtn(homePage.totalizacaoTabBtn);
-        } else if (locator.equals("favoritosTabBtn")) {
-            homePage.selectTabBtn(homePage.favoritosTabBtn);
-        } else if (locator.equals("favoritosTabBtn")) {
-            homePage.selectTabBtn(homePage.informacoesTabBtn);
-        }
+    @When("I select resultados")
+    public void i_select_resultado_tab_icon_btn(String locator) {
+        homePage.selectTabBtn(homePage.resultadosTabBtn);
     }
 
-    @Then("The {string} should be selected")
-    public void homePageReached(String locator) {
-        if (locator.equals("resultadosTabBtn")) {
-            assert homePage.isSelectedTabBtn(homePage.resultadosTabBtn);
-        } else if (locator.equals("totalizacaoTabBtn")) {
-            assert homePage.isSelectedTabBtn(homePage.totalizacaoTabBtn);
-        } else if (locator.equals("favoritosTabBtn")) {
-            assert homePage.isSelectedTabBtn(homePage.favoritosTabBtn);
-        } else if (locator.equals("favoritosTabBtn")) {
-            assert homePage.isSelectedTabBtn(homePage.informacoesTabBtn);
-        }
-    }
+//    @When("I select {string}")
+//    public void i_select_tab_icon_btn(String locator) {
+//        if (locator.equals("resultadosTabBtn")) {
+//            homePage.selectTabBtn(homePage.resultadosTabBtn);
+//        } else if (locator.equals("totalizacaoTabBtn")) {
+//            homePage.selectTabBtn(homePage.totalizacaoTabBtn);
+//        } else if (locator.equals("favoritosTabBtn")) {
+//            homePage.selectTabBtn(homePage.favoritosTabBtn);
+//        } else if (locator.equals("favoritosTabBtn")) {
+//            homePage.selectTabBtn(homePage.informacoesTabBtn);
+//        }
+//    }
+@Then("The {string} should be selected")
+public void homePageReached(String locator) {
+    assert homePage.isSelectedTabBtn(homePage.resultadosTabBtn);
+}
+
+//    @Then("The {string} should be selected")
+//    public void homePageReached(String locator) {
+//        if (locator.equals("resultadosTabBtn")) {
+//            assert homePage.isSelectedTabBtn(homePage.resultadosTabBtn);
+//        } else if (locator.equals("totalizacaoTabBtn")) {
+//            assert homePage.isSelectedTabBtn(homePage.totalizacaoTabBtn);
+//        } else if (locator.equals("favoritosTabBtn")) {
+//            assert homePage.isSelectedTabBtn(homePage.favoritosTabBtn);
+//        } else if (locator.equals("favoritosTabBtn")) {
+//            assert homePage.isSelectedTabBtn(homePage.informacoesTabBtn);
+//        }
+//    }
 }
