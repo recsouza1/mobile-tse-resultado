@@ -1,16 +1,14 @@
 package pages;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
-import util.DriverManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import util.UtilsActions;
 
-public class HomePage {
+public class HomePage extends UtilsActions {
 
     private AppiumDriver<MobileElement> driver;
     private WebDriverWait wait;
@@ -34,13 +32,30 @@ public class HomePage {
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Informações\")")
     public MobileElement informacoesTabBtn;
 
-    public void selectTabBtn(MobileElement locator) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.view.View")));
-        locator.click();
+    public void selectTabBtn(String option) {
+        if (option.equals("resultadosTabBtn")) {
+            clickOn(resultadosTabBtn);
+        } else if (option.equals("totalizacaoTabBtn")) {
+           clickOn(totalizacaoTabBtn);
+        } else if (option.equals("favoritosTabBtn")) {
+            clickOn(favoritosTabBtn);
+        } else if (option.equals("favoritosTabBtn")) {
+            clickOn(informacoesTabBtn);
+        }
     }
 
-    public boolean isSelectedTabBtn(MobileElement locator) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.view.View")));
-        return locator.isSelected();
+    public boolean isSelectedTabBtn(String option) {
+        boolean result = false;
+
+        if (option.equals("resultadosTabBtn")) {
+            result = resultadosTabBtn.isSelected();
+        } else if (option.equals("totalizacaoTabBtn")) {
+            result = totalizacaoTabBtn.isSelected();
+        } else if (option.equals("favoritosTabBtn")) {
+            result = favoritosTabBtn.isSelected();
+        } else if (option.equals("favoritosTabBtn")) {
+            result = informacoesTabBtn.isSelected();
+        }
+        return result;
     }
 }

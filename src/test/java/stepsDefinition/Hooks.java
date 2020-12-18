@@ -8,7 +8,9 @@ public class Hooks {
 
     @Before
     public static void setUp() {
-        DriverManager.getDriver();
+        if (DriverManager.driver == null) {
+            DriverManager.createDriver();
+        }
     }
 
     @After

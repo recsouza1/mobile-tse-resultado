@@ -30,8 +30,10 @@ import org.junit.runner.RunWith;
 class CucumberRunner {
 
     @BeforeClass
-    public static void setUp(){
-        DriverManager.getDriver();
+    public static void setUp() {
+        if (DriverManager.driver == null) {
+            DriverManager.createDriver();
+        }
     }
 
     @AfterClass

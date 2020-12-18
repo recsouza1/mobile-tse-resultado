@@ -1,17 +1,16 @@
 package pages;
 
-import util.DriverManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import util.DriverManager;
+import util.UtilsActions;
 
-public class OnBoardingPage {
+public class OnBoardingPage extends UtilsActions {
 
     private AppiumDriver<MobileElement> driver;
     private WebDriverWait wait;
@@ -34,13 +33,8 @@ public class OnBoardingPage {
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Agora não\")")
     public MobileElement agoraNaoBtn;
 
-    public void scrollToEnd(){
+    public void scrollToEnd() {
         driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).flingToEnd(10)"));
-    }
-
-    public void clickOn(MobileElement locator) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Button")));
-        locator.click();
     }
 
     public void completeOnBoarding() {

@@ -14,8 +14,8 @@ public class OnBoardingSteps {
 
     @Given("I launch the App for the first time")
     public void launchApp() {
-        onBoardingPage = new OnBoardingPage(DriverManager.getDriver());
-        homePage = new HomePage(DriverManager.getDriver());
+        onBoardingPage = new OnBoardingPage(DriverManager.driver);
+        homePage = new HomePage(DriverManager.driver);
     }
 
     @When("I complete the onboarding")
