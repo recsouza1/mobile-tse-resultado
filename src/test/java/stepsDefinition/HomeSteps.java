@@ -19,7 +19,7 @@ public class HomeSteps {
     }
 
     @When("I select resultados")
-    public void i_select_resultado_tab_icon_btn(String locator) {
+    public void i_select_resultado_tab_icon_btn() {
         homePage.selectTabBtn(homePage.resultadosTabBtn);
     }
 
@@ -36,7 +36,7 @@ public class HomeSteps {
 //        }
 //    }
     @Then("The restultados should be selected")
-    public void homePageReached(String locator) {
+    public void homePageReached() {
         assert homePage.isSelectedTabBtn(homePage.resultadosTabBtn);
     }
 
