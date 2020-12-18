@@ -19,12 +19,38 @@ public class HomeSteps {
     }
 
     @When("I select {string}")
-    public void i_select_tab_icon_btn(MobileElement locator) {
-        homePage.selectTabBtn(locator);
+    public void i_select_tab_icon_btn(String locator) {
+        switch (locator) {
+            case "resultadosTabBtn":
+                homePage.selectTabBtn(homePage.resultadosTabBtn);
+                break;
+            case "totalizacaoTabBtn":
+                homePage.selectTabBtn(homePage.totalizacaoTabBtn);
+                break;
+            case "favoritosTabBtn":
+                homePage.selectTabBtn(homePage.favoritosTabBtn);
+                break;
+            case "informacoesTabBtn":
+                homePage.selectTabBtn(homePage.informacoesTabBtn);
+                break;
+        }
     }
 
     @Then("The {string} should be selected")
-    public void homePageReached(MobileElement locator) {
-        assert homePage.isSelectedTabBtn(locator);
+    public void homePageReached(String locator) {
+        switch (locator) {
+            case "resultadosTabBtn":
+                assert homePage.isSelectedTabBtn(homePage.resultadosTabBtn);
+                break;
+            case "totalizacaoTabBtn":
+                assert homePage.isSelectedTabBtn(homePage.totalizacaoTabBtn);
+                break;
+            case "favoritosTabBtn":
+                assert homePage.isSelectedTabBtn(homePage.favoritosTabBtn);
+                break;
+            case "informacoesTabBtn":
+                assert homePage.isSelectedTabBtn(homePage.informacoesTabBtn);
+                break;
+        }
     }
 }
