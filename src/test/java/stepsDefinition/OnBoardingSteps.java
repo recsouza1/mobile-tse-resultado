@@ -3,6 +3,7 @@ package stepsDefinition;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import util.DriverManager;
 import pages.OnBoardingPage;
 import pages.HomePage;
@@ -25,6 +26,6 @@ public class OnBoardingSteps {
 
     @Then("I reach the main screen")
     public void homePageReached() {
-        assert homePage.selecioneLocalStr.isDisplayed();
+        Assert.assertTrue("This is not the expected page!", homePage.selecioneLocalStr.isDisplayed());
     }
 }

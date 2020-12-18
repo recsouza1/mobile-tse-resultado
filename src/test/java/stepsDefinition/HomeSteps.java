@@ -25,6 +25,6 @@ public class HomeSteps {
 
     @Then("The {string} should be selected")
     public void homePageReached(String option) {
-        Assert.assertTrue(homePage.isSelectedTabBtn(option));
+        Assert.assertTrue("Icon is not selected!", homePage.isSelectedTabBtn(option));
     }
 }
