@@ -35,10 +35,10 @@ public class HomeSteps {
 //            homePage.selectTabBtn(homePage.informacoesTabBtn);
 //        }
 //    }
-@Then("The {string} should be selected")
-public void homePageReached(String locator) {
-    assert homePage.isSelectedTabBtn(homePage.resultadosTabBtn);
-}
+    @Then("The restultados should be selected")
+    public void homePageReached(String locator) {
+        assert homePage.isSelectedTabBtn(homePage.resultadosTabBtn);
+    }
 
 //    @Then("The {string} should be selected")
 //    public void homePageReached(String locator) {
