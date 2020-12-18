@@ -20,37 +20,27 @@ public class HomeSteps {
 
     @When("I select {string}")
     public void i_select_tab_icon_btn(String locator) {
-        switch (locator) {
-            case "resultadosTabBtn":
-                homePage.selectTabBtn(homePage.resultadosTabBtn);
-                break;
-            case "totalizacaoTabBtn":
-                homePage.selectTabBtn(homePage.totalizacaoTabBtn);
-                break;
-            case "favoritosTabBtn":
-                homePage.selectTabBtn(homePage.favoritosTabBtn);
-                break;
-            case "informacoesTabBtn":
-                homePage.selectTabBtn(homePage.informacoesTabBtn);
-                break;
+        if (locator.equals("resultadosTabBtn")) {
+            homePage.selectTabBtn(homePage.resultadosTabBtn);
+        } else if (locator.equals("totalizacaoTabBtn")) {
+            homePage.selectTabBtn(homePage.totalizacaoTabBtn);
+        } else if (locator.equals("favoritosTabBtn")) {
+            homePage.selectTabBtn(homePage.favoritosTabBtn);
+        } else if (locator.equals("favoritosTabBtn")) {
+            homePage.selectTabBtn(homePage.informacoesTabBtn);
         }
     }
 
     @Then("The {string} should be selected")
     public void homePageReached(String locator) {
-        switch (locator) {
-            case "resultadosTabBtn":
-                assert homePage.isSelectedTabBtn(homePage.resultadosTabBtn);
-                break;
-            case "totalizacaoTabBtn":
-                assert homePage.isSelectedTabBtn(homePage.totalizacaoTabBtn);
-                break;
-            case "favoritosTabBtn":
-                assert homePage.isSelectedTabBtn(homePage.favoritosTabBtn);
-                break;
-            case "informacoesTabBtn":
-                assert homePage.isSelectedTabBtn(homePage.informacoesTabBtn);
-                break;
+        if (locator.equals("resultadosTabBtn")) {
+            assert homePage.isSelectedTabBtn(homePage.resultadosTabBtn);
+        } else if (locator.equals("totalizacaoTabBtn")) {
+            assert homePage.isSelectedTabBtn(homePage.totalizacaoTabBtn);
+        } else if (locator.equals("favoritosTabBtn")) {
+            assert homePage.isSelectedTabBtn(homePage.favoritosTabBtn);
+        } else if (locator.equals("favoritosTabBtn")) {
+            assert homePage.isSelectedTabBtn(homePage.informacoesTabBtn);
         }
     }
 }
