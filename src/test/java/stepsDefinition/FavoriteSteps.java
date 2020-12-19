@@ -40,6 +40,8 @@ public class FavoriteSteps {
     public void remove_candidate_from_favorite_page() {
         homePage.desfavoritar();
         homePage.clickOnCloseBtn();
+        homePage.goToTotalTab();
+        homePage.goToFavoriteTab();
     }
 
     @Then("I see the candidate as favorite")
@@ -49,6 +51,6 @@ public class FavoriteSteps {
 
     @Then("The candidate is no longer displayed on favorites page")
     public void candidate_removed_from_favorite() {
-        Assert.assertFalse("Candidate is still listed in favorites!", homePage.candidateJosiel.isDisplayed());
+        Assert.assertTrue("Candidate is still listed in favorites!", homePage.comeceExplorarTabBtn.isDisplayed());
     }
 }

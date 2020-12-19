@@ -51,7 +51,7 @@ public class HomePage extends UtilsActions {
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Favoritar\")")
     public MobileElement favoritarBtn;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Favorito\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Favorito\")")
     public MobileElement desfavoritarBtn;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Fechar\")")
@@ -105,6 +105,10 @@ public class HomePage extends UtilsActions {
 
     public void goToFavoriteTab() {
         clickOn(favoritosTabBtn);
+    }
+
+    public void goToTotalTab() {
+        clickOn(totalizacaoTabBtn);
     }
 
     public void favoriteACandidate() {
