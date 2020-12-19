@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         features = {"src/test/resources/features"},
 
         // Define the steps files location
-        glue = {"steps"},
+        glue = {"stepsDefinition"},
 
         // Readable format of the console output from Cucumber
         monochrome = true,
@@ -29,15 +29,4 @@ import org.junit.runner.RunWith;
 )
 public class CucumberRunner {
 
-//    @BeforeClass
-//    public static void setUp() {
-//        if (DriverManager.driver == null) {
-//            DriverManager.createDriver();
-//        }
-//    }
-//
-//    @AfterClass
-//    public static void tearDown(){
-//        DriverManager.closeDriver();
-//    }
 }
