@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         // Run the scenarios specified by tags
-        //tags = {""},
+        // tags = {""},
 
         // Define the features files location
         features = {"src/test/resources/features"},
@@ -27,17 +27,17 @@ import org.junit.runner.RunWith;
         // Plugins
         plugin = {"pretty", "html:target/cucumber-html-report"}
 )
-class CucumberRunner {
+public class CucumberRunner {
 
-    @BeforeClass
-    public static void setUp() {
-        if (DriverManager.driver == null) {
-            DriverManager.createDriver();
-        }
-    }
-
-    @AfterClass
-    public static void tearDown(){
-        DriverManager.closeDriver();
-    }
+//    @BeforeClass
+//    public static void setUp() {
+//        if (DriverManager.driver == null) {
+//            DriverManager.createDriver();
+//        }
+//    }
+//
+//    @AfterClass
+//    public static void tearDown(){
+//        DriverManager.closeDriver();
+//    }
 }
