@@ -39,6 +39,24 @@ public class HomePage extends UtilsActions {
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"O app Resultados\")")
     public MobileElement descricaoAppStr;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Eleições 2020\")")
+    public MobileElement topSelectStr;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"20/12/2020\")")
+    public MobileElement searchResult;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"JOSIEL\")")
+    public MobileElement candidateJosiel;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Favoritar\")")
+    public MobileElement favoritarBtn;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Favorito\")")
+    public MobileElement desfavoritarBtn;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Fechar\")")
+    public MobileElement closeButton;
+
     public void selectTabBtn(String option) {
         if (option.equals("resultadosTabBtn")) {
             clickOn(resultadosTabBtn);
@@ -64,5 +82,33 @@ public class HomePage extends UtilsActions {
             result = descricaoAppStr.isDisplayed();
         }
         return result;
+    }
+
+    public void goToCandidatePage() {
+        clickOn(topSelectStr);
+        clickOn(searchResult);
+        clickOn(candidateJosiel);
+    }
+
+    public void clickOnFavoriteBtn() {
+        clickOn(favoritarBtn);
+    }
+
+    public void desfavoritar() {
+        clickOn(candidateJosiel);
+        clickOn(desfavoritarBtn);
+    }
+
+    public void clickOnCloseBtn() {
+        clickOn(closeButton);
+    }
+
+    public void goToFavoriteTab() {
+        clickOn(favoritosTabBtn);
+    }
+
+    public void favoriteACandidate() {
+        goToCandidatePage();
+        clickOnFavoriteBtn();
     }
 }
