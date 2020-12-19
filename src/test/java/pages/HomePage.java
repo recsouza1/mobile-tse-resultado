@@ -21,6 +21,7 @@ public class HomePage extends UtilsActions {
     public MobileElement selecioneLocalStr;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Resultados\")")
+//    @AndroidFindBy(id = "tab-button-resultados")
     public MobileElement resultadosTabBtn;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Totalização\")")
@@ -32,6 +33,12 @@ public class HomePage extends UtilsActions {
     @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Informações\")")
     public MobileElement informacoesTabBtn;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Comece a explorar\")")
+    public MobileElement comeceExplorarTabBtn;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"O app Resultados\")")
+    public MobileElement descricaoAppStr;
+
     public void selectTabBtn(String option) {
         if (option.equals("resultadosTabBtn")) {
             clickOn(resultadosTabBtn);
@@ -39,7 +46,7 @@ public class HomePage extends UtilsActions {
            clickOn(totalizacaoTabBtn);
         } else if (option.equals("favoritosTabBtn")) {
             clickOn(favoritosTabBtn);
-        } else if (option.equals("favoritosTabBtn")) {
+        } else if (option.equals("informacoesTabBtn")) {
             clickOn(informacoesTabBtn);
         }
     }
@@ -48,13 +55,13 @@ public class HomePage extends UtilsActions {
         boolean result = false;
 
         if (option.equals("resultadosTabBtn")) {
-            result = resultadosTabBtn.isSelected();
+            result = selecioneLocalStr.isDisplayed();
         } else if (option.equals("totalizacaoTabBtn")) {
-            result = totalizacaoTabBtn.isSelected();
+            result = selecioneLocalStr.isDisplayed();
         } else if (option.equals("favoritosTabBtn")) {
-            result = favoritosTabBtn.isSelected();
-        } else if (option.equals("favoritosTabBtn")) {
-            result = informacoesTabBtn.isSelected();
+            result = comeceExplorarTabBtn.isDisplayed();
+        } else if (option.equals("informacoesTabBtn")) {
+            result = descricaoAppStr.isDisplayed();
         }
         return result;
     }

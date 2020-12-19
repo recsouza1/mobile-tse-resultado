@@ -17,8 +17,8 @@ public class DriverManager {
     private static WebDriverWait wait;
     private static final long defaultTimeout = 10;
 
-    private static final String APK_PATH = "/Users/eduardofinotti/Documents/www/mobile-tse-resultado/src/test/resources/apk/ResultadosTSE.apk";
-    //private static final String APK_PATH = "/Users/marlonalmeida/testing/mobile-testing/mobile-tse-resultado/src/test/resources/apk/ResultadosTSE.apk";
+//    private static final String APK_PATH = "/Users/eduardofinotti/Documents/www/mobile-tse-resultado/src/test/resources/apk/ResultadosTSE.apk";
+    private static final String APK_PATH = "/Users/marlonalmeida/testing/mobile-testing/mobile-tse-resultado/src/test/resources/apk/ResultadosTSE.apk";
     private static final String APPIUM_URL_SERVER = "http://localhost:4723/wd/hub";
 
     public static AppiumDriver<MobileElement> createDriver() {
