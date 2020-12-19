@@ -24,7 +24,7 @@ task runFeatures(){
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = [
                     '--plugin', 'pretty',
-                    '--plugin','html:target/cucumber-html-report',
+                    '--plugin','html:target/cucumber-html-report.html',
                     '--monochrome','--strict',
                     '--glue', 'stepDefinition',
                     'src/main/resources/features/'
