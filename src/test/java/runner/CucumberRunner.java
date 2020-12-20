@@ -25,7 +25,7 @@ import org.junit.runner.RunWith;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
 
         // Plugins
-        plugin = {"pretty", "html:target/cucumber-html-report.html"}
+        plugin = {"pretty", "html:target/cucumber-execution-report.html"}
 )
 public class CucumberRunner {
 
